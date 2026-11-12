@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beside Support</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --panel: #ffffff;
+      --panel-soft: #f1eee9;
+      --text: #1d1d1f;
+      --muted: #5b5a58;
+      --border: #e6dfd7;
+      --accent: #2b2f36;
+      --accent-soft: #eef0f3;
+      --success: #265b46;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f7f3ee 0%, #f3efe9 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 14px 38px rgba(24, 24, 27, 0.06);
+      padding: 32px clamp(20px, 4vw, 48px);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.06em;
+    }
+
+    .subtitle {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 62ch;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .panel {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 20px;
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .panel p,
+    .panel li,
+    .panel a {
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: #f7f7f4;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding-top: 26px; }
+      .card { border-radius: 18px; }
+      .panel { padding: 18px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="eyebrow">Support</div>
+      <h1>Need help with Beside?</h1>
+      <p class="subtitle">
+        We want Beside to feel calm, reliable, and easy to use. If you are running into a problem,
+        need help with an import, or want to share feedback, we are here to help.
+      </p>
+
+      <div class="grid">
+        <article class="panel">
+          <h2>Contact support</h2>
+          <p>
+            Email us at <a href="mailto:zainworkmaill@gmail.com">zainworkmaill@gmail.com</a>
+          </p>
+          <p>
+            Please include your device type, iOS version, app version, and a short description of the issue.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>Common requests</h2>
+          <ul>
+            <li>App crashes or startup issues</li>
+            <li>Import or scan problems</li>
+            <li>Missing or damaged saved items</li>
+            <li>Questions about app behavior or privacy</li>
+            <li>Feedback or feature suggestions</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="note">
+        <strong>Tip:</strong> before contacting support, please check that you are using the latest version of Beside
+        from the App Store. If the issue is tied to a specific document, file, or note, including the relevant file name
+        and a brief description will help us investigate faster.
+      </div>
+
+      <div class="footer">
+        For privacy questions, please see the <a href="privacy-policy.html">Privacy Policy</a>.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
