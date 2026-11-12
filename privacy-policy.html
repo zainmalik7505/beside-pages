@@ -6,21 +6,22 @@
   <title>Beside Privacy Policy</title>
   <style>
     :root {
-      --bg: #f5f3ee;
-      --panel: #ffffff;
-      --text: #1f2024;
-      --muted: #575d64;
-      --border: #e6dfd8;
-      --soft: #f1eee9;
-      --accent: #22252a;
+      --bg: #f5f1eb;
+      --panel: rgba(255,255,255,0.84);
+      --text: #1f1d1b;
+      --muted: #605d59;
+      --line: rgba(34,31,28,0.1);
+      --shadow: 0 18px 40px rgba(18,16,14,0.06);
+      --accent: #1d1d1b;
+      --accent-soft: #efe8e1;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #f7f4ee 0%, #f3efe9 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f7f3ee 0%, #f3efe9 100%);
       color: var(--text);
       line-height: 1.7;
     }
@@ -28,43 +29,90 @@
     .wrap {
       max-width: 980px;
       margin: 0 auto;
-      padding: 48px 20px 80px;
+      padding: 64px 20px 80px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+    }
+
+    .brand-mark {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1d1d1b 0%, #7a7269 100%);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.55);
+    }
+
+    .mini-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: 0 14px 36px rgba(18, 18, 20, 0.05);
-      padding: 32px clamp(20px, 4vw, 48px);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      padding: clamp(24px, 4vw, 48px);
     }
 
     .eyebrow {
+      margin: 0 0 12px;
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 12px;
-      font-weight: 700;
       color: var(--muted);
-      margin-bottom: 10px;
+      font-weight: 600;
     }
 
     h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2.2rem, 4vw, 3.3rem);
-      line-height: 1.08;
-      letter-spacing: -0.06em;
+      margin: 0 0 10px;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+      font-weight: 500;
+    }
+
+    .updated {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     h2 {
-      margin-top: 26px;
+      margin-top: 28px;
       margin-bottom: 10px;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       letter-spacing: -0.04em;
+      font-weight: 600;
     }
 
     p, li {
       color: var(--text);
       font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
     }
 
     a {
@@ -73,111 +121,92 @@
       text-underline-offset: 2px;
     }
 
-    ul {
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .small {
-      font-size: 0.92rem;
-    }
-
     .note {
-      margin-top: 18px;
-      background: var(--soft);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      margin-top: 26px;
       padding: 18px 20px;
+      border-radius: 18px;
+      background: var(--accent-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.96rem;
     }
 
     @media (max-width: 640px) {
-      .wrap { padding-top: 26px; }
-      .card { border-radius: 18px; }
+      .wrap { padding-top: 36px; }
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .card { border-radius: 22px; }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Beside</span>
+      </div>
+      <a class="mini-link" href="./support.html">Support</a>
+    </div>
+
     <section class="card">
-      <div class="eyebrow">Privacy Policy</div>
-      <h1>Beside Privacy Policy</h1>
-      <p class="muted">Last updated: November 12, 2026</p>
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>Privacy</h1>
+      <p class="updated">Last updated: November 12, 2026</p>
 
       <p>
-        Beside respects your privacy. This Privacy Policy explains what information Beside collects,
-        how it is used, and what choices you have.
+        Beside is designed to be a local, private way to keep your documents, notes, and saved links organized.
+        This policy explains what Beside does and does not collect.
       </p>
 
-      <h2>1. Information we do not collect</h2>
+      <h2>What we do not collect</h2>
       <p>
-        Beside does not require an account, does not collect personal user profiles, and does not sell or share
-        personal data for advertising or marketing purposes. We do not use third-party advertising analytics in the app.
-      </p>
-      <p>
-        We do not upload your files, documents, photos, notes, or extracted text to a remote service for general analytics.
+        Beside does not require an account. We do not sell user data, and we do not use advertising networks inside the app.
+        We do not build a profile of your behavior for marketing or analytics.
       </p>
 
-      <h2>2. Information stored on your device</h2>
+      <h2>What stays on your device</h2>
       <p>
-        Beside stores your imported files, notes, thumbnails, and related local data on your device for app functionality.
-        This data is used to support features such as:
+        Beside stores documents, notes, photos, imported files, and related local data on your device so the app can function.
+        This includes things like:
       </p>
       <ul>
-        <li>Saving and organizing files, photos, PDFs, and links</li>
-        <li>Extracting text from supported documents and images</li>
-        <li>Searching your saved content locally</li>
-        <li>Keeping notes and comparisons alongside your saved items</li>
+        <li>Saved files and imported images</li>
+        <li>Notes and extracted text</li>
+        <li>Thumbnails and local metadata</li>
+        <li>Your personal organization and search data inside the app</li>
       </ul>
 
-      <h2>3. How we handle extracted text</h2>
+      <h2>Text extraction</h2>
       <p>
-        If you use text extraction features, the extracted text is processed on-device to support editing, searching,
-        and note creation. This text remains local to your device and is not used to create a user profile or account.
+        If you use Beside to extract text from a document or image, that processing happens on-device.
+        The extracted text is used for viewing, editing, and searching within the app. It is not used to create a personal profile.
       </p>
 
-      <h2>4. App permissions</h2>
+      <h2>Permissions</h2>
       <p>
-        Beside may request access to device features that are necessary for its core functionality, such as:
-      </p>
-      <ul>
-        <li>Camera or photo library access for importing images or scans</li>
-        <li>Files access for opening and organizing local files</li>
-        <li>Local data access required for storing saved items on-device</li>
-      </ul>
-      <p>
+        Beside may ask for access to device features needed to import and organize content, such as photo access or file access.
         These permissions are used only to provide the features you choose to use in the app.
       </p>
 
-      <h2>5. Links and web browsing</h2>
+      <h2>External links</h2>
       <p>
-        Beside may open external web links that you save or choose to view. External websites are governed by those websites'
-        own privacy policies and practices. Beside does not control or monitor activity on third-party websites.
+        If you open a link saved in Beside, that website is governed by its own privacy practices.
+        Beside does not control or monitor activity on third-party websites.
       </p>
 
-      <h2>6. Data retention</h2>
+      <h2>Retention</h2>
       <p>
-        Information stored in Beside remains on your device until you delete it or uninstall the app. If you remove items,
-        they are deleted from the app's local storage.
+        Data remains in the app until you delete it or remove the app. If you delete an item, it is removed from the app's local storage.
       </p>
 
-      <h2>7. No third-party analytics or advertising</h2>
+      <h2>Contact</h2>
       <p>
-        Beside does not use third-party advertising identifiers, ad networks, or user analytics services for tracking or profiling.
-      </p>
-
-      <h2>8. Contact</h2>
-      <p>
-        If you have any questions about this Privacy Policy or how Beside handles your data, please contact us at
+        If you have any questions about this Privacy Policy, email us at
         <a href="mailto:zainworkmaill@gmail.com">zainworkmaill@gmail.com</a>.
       </p>
 
-      <div class="note small">
-        This policy may be updated from time to time to reflect changes in the app or applicable law. Continued use of the app
-        after changes are made means you accept the updated policy.
+      <div class="note">
+        This policy may be updated from time to time. Continued use of Beside after any update indicates your acceptance of the updated policy.
       </div>
     </section>
   </main>

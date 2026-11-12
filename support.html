@@ -6,88 +6,131 @@
   <title>Beside Support</title>
   <style>
     :root {
-      --bg: #f6f3ee;
-      --panel: #ffffff;
-      --panel-soft: #f1eee9;
-      --text: #1d1d1f;
-      --muted: #5b5a58;
-      --border: #e6dfd7;
-      --accent: #2b2f36;
-      --accent-soft: #eef0f3;
-      --success: #265b46;
+      --bg: #f5f1eb;
+      --panel: rgba(255,255,255,0.84);
+      --panel-strong: #fffdfa;
+      --text: #1f1d1b;
+      --muted: #605d59;
+      --line: rgba(34,31,28,0.1);
+      --shadow: 0 18px 40px rgba(18,16,14,0.06);
+      --accent: #1d1d1b;
+      --accent-soft: #efe8e1;
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
       background: linear-gradient(180deg, #f7f3ee 0%, #f3efe9 100%);
       color: var(--text);
       line-height: 1.6;
     }
 
     .wrap {
-      max-width: 900px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 48px 20px 72px;
+      padding: 64px 20px 80px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 30px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+    }
+
+    .brand-mark {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1d1d1b 0%, #7a7269 100%);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.55);
+    }
+
+    .mini-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: 0 14px 38px rgba(24, 24, 27, 0.06);
-      padding: 32px clamp(20px, 4vw, 48px);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 48px);
+      backdrop-filter: blur(8px);
     }
 
     .eyebrow {
+      margin: 0 0 14px;
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 12px;
-      font-weight: 700;
       color: var(--muted);
-      margin-bottom: 12px;
+      font-weight: 600;
     }
 
     h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      line-height: 1.08;
-      letter-spacing: -0.06em;
+      margin: 0 0 14px;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+      font-weight: 500;
     }
 
     .subtitle {
-      margin: 0 0 28px;
+      margin: 0 0 26px;
+      max-width: 60ch;
       color: var(--muted);
       font-size: 1.06rem;
-      max-width: 62ch;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
-      margin-top: 24px;
+      margin-top: 20px;
     }
 
     .panel {
-      background: var(--panel-soft);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 20px;
       padding: 22px 20px;
     }
 
     .panel h2 {
       margin: 0 0 8px;
-      font-size: 1.1rem;
+      font-size: 1.06rem;
+      letter-spacing: -0.04em;
+      font-weight: 600;
     }
 
-    .panel p,
-    .panel li,
-    .panel a {
-      color: var(--text);
+    .panel p, .panel li {
+      margin: 0;
+      color: var(--muted);
       font-size: 0.98rem;
+    }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
     }
 
     a {
@@ -96,74 +139,83 @@
       text-underline-offset: 2px;
     }
 
-    ul {
-      margin: 10px 0 0 18px;
-      padding: 0;
-    }
-
     .note {
       margin-top: 24px;
       padding: 18px 20px;
-      border-radius: 16px;
-      background: #f7f7f4;
-      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--accent-soft);
+      border: 1px solid var(--line);
       color: var(--text);
+      font-size: 0.97rem;
     }
 
     .footer {
       margin-top: 18px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
     @media (max-width: 640px) {
-      .wrap { padding-top: 26px; }
-      .card { border-radius: 18px; }
-      .panel { padding: 18px 16px; }
+      .wrap { padding-top: 36px; }
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .card { border-radius: 22px; }
     }
   </style>
 </head>
 <body>
   <main class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Beside</span>
+      </div>
+      <a class="mini-link" href="./privacy-policy.html">Privacy Policy</a>
+    </div>
+
     <section class="card">
-      <div class="eyebrow">Support</div>
-      <h1>Need help with Beside?</h1>
+      <p class="eyebrow">Support</p>
+      <h1>Need a hand?</h1>
       <p class="subtitle">
-        We want Beside to feel calm, reliable, and easy to use. If you are running into a problem,
-        need help with an import, or want to share feedback, we are here to help.
+        We keep Beside simple, quiet, and intentional. If something is not working as expected,
+        we want to help quickly and clearly.
       </p>
 
       <div class="grid">
         <article class="panel">
-          <h2>Contact support</h2>
+          <h2>Contact us</h2>
           <p>
-            Email us at <a href="mailto:zainworkmaill@gmail.com">zainworkmaill@gmail.com</a>
-          </p>
-          <p>
-            Please include your device type, iOS version, app version, and a short description of the issue.
+            Email: <a href="mailto:zainworkmaill@gmail.com">zainworkmaill@gmail.com</a>
           </p>
         </article>
 
         <article class="panel">
-          <h2>Common requests</h2>
+          <h2>Include in your message</h2>
           <ul>
-            <li>App crashes or startup issues</li>
-            <li>Import or scan problems</li>
-            <li>Missing or damaged saved items</li>
-            <li>Questions about app behavior or privacy</li>
-            <li>Feedback or feature suggestions</li>
+            <li>Device model</li>
+            <li>iOS version</li>
+            <li>App version</li>
+            <li>A short description of the issue</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>Common questions</h2>
+          <ul>
+            <li>App crash or startup issue</li>
+            <li>Import or scan problem</li>
+            <li>Missing saved items</li>
+            <li>Privacy or app behavior questions</li>
           </ul>
         </article>
       </div>
 
       <div class="note">
-        <strong>Tip:</strong> before contacting support, please check that you are using the latest version of Beside
-        from the App Store. If the issue is tied to a specific document, file, or note, including the relevant file name
-        and a brief description will help us investigate faster.
+        Before you contact us, make sure you are on the latest version of Beside from the App Store.
+        If the issue is tied to a file, scan, or note, including the file name and a short description will help us troubleshoot faster.
       </div>
 
       <div class="footer">
-        For privacy questions, please see the <a href="privacy-policy.html">Privacy Policy</a>.
+        For details on how Beside handles your data, see the <a href="./privacy-policy.html">Privacy Policy</a>.
       </div>
     </section>
   </main>
